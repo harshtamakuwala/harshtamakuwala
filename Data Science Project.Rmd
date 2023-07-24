@@ -1,0 +1,202 @@
+---
+title: "Data Science Project"
+author: "Harsh Tamakuwala"
+date: "2023-07-24"
+output:
+  pdf_document: default
+  word_document: default
+  html_document: default
+---
+
+
+
+          Hochschule Fresenius University of Applied Sciences(Köln Campus)
+                    Faculty of Business & Media
+                M.A. International Business Management
+                  Data Science for Business (Sem-02)
+              Name of Lecturer: Prof. Dr.Stephan Huber
+
+           Surname, First Name:	Tamakuwala, Harsh Chetankumar
+           Email: tamakuwala.harsh@stud.hs-fresenius.de
+           Matriculation No:		400330989
+           Date of Submission:  24.07.02023
+
+
+
+
+
+
+
+### **I.Table of Contents:**
+ 
+ 
+#### 1.Intoduction
+#### 2.Challenges	
+#### 3.My paper
+#### 3.First Learning
+#### 4.My Progress and where i stuck
+#### 5.Git Hub Experience
+#### 6.References	
+#### 7.Affidevit	
+  
+
+#### **1.Introduction:**
+The following report outlines the overall process and obstacles of learning data science and R Studio over the semester. Throughout my R Studio learning experience, I worked on understanding and applying the different capabilities of the software. As it was a totally new and unique experience for me as a beginner, but also brings complexity to learning and understanding what R and R Studio are. From knowing what R programming and R Studio exactly are to understanding and visualizing that data, it is a long process that requires very good practice and patience to get good learning results.
+
+#### **2.Challenges for me:**
+Working with new software may bring new challenges in the beginning, but somehow we go through the process. The following are the problems I witnessed for myself while attempting to learn R Studio:
+
+**1.Complex work:** As I have never heard of work related to data science, it brings little confusion and fear in me that this work is very complex and I need a very good level of data understanding as well as programming skills to go through the learning process. I thought I needed to understand complex statistics concepts and computer science to understand the total programming in R.
+
+**2. Software Crashes:**
+During my learning process, I faced instances where the R Studio software crashed unexpectedly. As you can see in Figure 1, after opening the software, it went black on the screen of my laptop.
+
+![Figure 1](C:/Users/abc/Desktop/img.jpg ){ width=50% }
+
+
+
+Even though I tried to uninstall and install again, this kind of problem may arise as the result of a different laptop and computer system. To troubleshoot and resolve these crashes, I tried to keep an updated version of my computer as per my computer's window system, like Windows 10 or 11. So, I ensured that my R Studio and R versions were up-to-date with my Windows software, as outdated software versions can lead to stability issues. Overall, this experience taught me that this type of technical difficulty.
+
+
+**3.R Studio and R Markdown:**
+To enhance my learning in R Studio, I first learned R Markdown by practicing the R Markdown tutorial, where I saw how it works and basically found that it is one kind of writing where I have to follow rules like _ italic, ** for Bold, # for header, and * for bullet points, etc. Later, I had trouble keeping the image as first I uploaded the image, but that was too big as I didn't know how to resize it, so I learned how to figure out the code for keeping the limit on size, for example,{ width = 50% }. Later, if I talk about R scripting, it was a strange experience as I had never done any coding in it and was not aware of how it works for data visualization, but somehow giving time to that thing gave me a basic understanding of it. I learned how to generate HTML files from Rmd, enabling the creation of reports and presentations.
+
+**4.Finding Freely Available Papers with Data sets:**
+As part of my learning journey, I focused on finding a research paper that provided both open access and freely available datasets. I utilised various online websites like the World Bank and the American Economic Journal for finding papers. When I find a simple and easy paper for data visualisation with a normal and easy graph that sometimes has data confidentiality, I cannot use that paper. I mailed a couple of papers to my professor to know which I could use and which I could not. Somehow I approved the paper from the professor for using the paper named Mental Health Costs of Lockdowns:Evidence from Age-Specific Curfews in Turkey By Onur Altindag, Bilge Erten, and Pinar Keskin. But somehow I thought that graph inside was more complex for me to replicate.
+
+**5.Understanding Paper Terminology:**
+After identifying the suitable paper, I dedicated time to thoroughly understanding its content and the terminology used within. In the paper I selected, it mostly describes how Lockdown affects the mental health of old people in Turkey, and there is a lot of data where metal distress and metal-related terms are used, which is a difficult part to understand. Even when a survey is conducted over the phone, data with a mean and variables makes it more difficult for me to understand the graph replicated on paper. 
+
+#### **3.First learning:**
+Using R scripting for data visualization is a journey that begins with carrying out work with basic and normal graph visualization, where I can learn how to utilize data and then grasp the process of how R scripting and data visualization operate. I was excited about the experience, but after that, finding difficult and complex charts and graphs from my selected paper made me more confused about using data, understanding, and visualizing the graphs.
+
+The Following is my first trial to visualize normal graph and also took help of chat GPT for earnings.
+
+![Figure 2](C:/Users/abc/Desktop/Trial.jpeg){ width=70% }
+
+* For that i used following data and code:
+```{r}
+# Load the dataset 'mtcars'
+data(mtcars)
+
+# Count the number of cars for each number of cylinders
+cylinder_counts <- table(mtcars$cyl)
+
+# Create the bar plot
+barplot(cylinder_counts, 
+        main = "Number of Cars by Number of Cylinders",
+        xlab = "Number of Cylinders",
+        ylab = "Number of Cars",
+        col = "skyblue",
+        border = "red",
+        ylim = c(0, max(cylinder_counts) + 2),
+        space = 0.4)
+head(mtcars)
+
+```
+
+
+#### **4.My Progress and where i stuck:**
+
+**1 Information about Paper:**
+The Corona lockdown affects people's mental health as well. For older people, the Turkish government puts an age-specific lockdown on their mobility. This lockdown affects the mental health of older people. The Turkish government imposed a strict stay-at-home order for the high-risk population of those 65 and older starting on March 21, 2020 (Altindag et al., 2022, P.321). So there is a change in mental health in those who remain outside the home, and those older people who remain isolated have different effects on their mental health outcomes.
+
+  **_Graphs:_**
+    
+    
+  ![Figure 2](C:/Users/abc/Desktop/Graph.jpeg){ width=70%}
+  
+  **_Some of the trial with the help of Chat GPT:_**
+  
+```{r}
+library(ggplot2)
+
+# Create the data frame with days outside last week
+data <- data.frame(
+  x = c(-44, -22, 0, 22, 44),
+  y = c(0, 2, 4, 6, 0),
+  labels = c("Born before December 1955 (in months)", "22", "44", "0", "2")
+)
+
+# Create the ggplot object
+plot <- ggplot(data, aes(x = x, y = y)) +
+  geom_text(aes(label = labels), hjust = 0, vjust = 0) +
+  labs(title = "Days Outside Last Week",
+       x = "Birth Year",
+       y = "Days Outside Last Week") +
+  scale_x_continuous(breaks = c(-44, -22, 0, 22, 44),
+                     labels = c("−44", "−22", "0", "22", "44")) +
+  theme_minimal()
+
+print(plot)
+```
+  
+```{r}
+library(ggplot2)
+
+# Create the data frame with days outside last week
+data <- data.frame(
+  x = c(-44, -22, 0),
+  y = c(0, 0, 0),
+  labels = c("Born Before Dec 1955", "22", "44")
+)
+
+# Create the ggplot object
+plot <- ggplot(data, aes(x = x, y = y)) +
+  geom_vline(xintercept = c(-44, -22, 0), linetype = "dashed", color = "black") +
+  geom_hline(yintercept = c(0, 2, 4, 6), linetype = "dotted", color = "black") +
+  geom_text(aes(label = labels), hjust = 0, vjust = 0) +
+  labs(title = "Panel A. days Outside last week",
+       x = "X Axis",
+       y = "Y Axis") +
+  theme_minimal()
+
+print(plot)
+```
+  
+  
+     
+    
+##### **4.What if i had more time:**
+If I had more time, I would have understood the whole data I have for my chosen paper, since I struggled significantly for understanding the data due to the different kinds of files and data. I began to feel more and more complexity, as if I had chosen difficult paper. Using R, I can obtain a deeper knowledge of programming ideas and visualization approaches. Learning R is a never-ending journey that needs much too much dedication,and if making more and more efforts results in failure or worse, it can lead to frustration.I was total getting confuse because of GGPLOT kind of bars and various terms of mena and SD etc.
+
+
+ 
+
+#### **5.Git Hub Experience:**
+As a new learner on GitHub, I started by creating a new account by choosing a username and a password using my email ID. I made an account much earlier, already in May 2023. That account was made as a new curious user when I saw that my professor of Data science had already made his account and shared his data science-related work. But making an account and seeing GitHub that day, I didn't much operate because I wasn't much able to understand how to use it and where I needed to use it.I still like to see others work and projects they have done.
+
+The following is my Github account:
+
+![Figure3](C:/Users/abc/Desktop/Github.jpeg){ width=70% }
+
+
+#### **6.References:**
+
+ALTINDAG ET AL.,2022,Mental Health Costs of Lockdowns: Evidence from Age-Specific Curfews in Turkey,American Economic Journal: Applied Economics 2022.
+
+
+
+
+#### **7.Affidevit:**
+
+I, Harsh Chetankumar Tamakuwala ,hereby affirm that this submitted paper was authored unaided and solely by me. Additionally, no other sources than those in the reference list were used.
+Parts of this paper, including tables and figures, that have been taken either verbatim or analogously from other works have in each case been properly cited with regard to their origin and authorship.
+This paper either in parts or in its entirety, be it in the same or similar form, has not been submitted to any other examination board and has not been published.
+
+Location, Date
+Cologne,24.07.2023
+
+![Figure 3](C:\Users\abc\Desktop\Harsh Docs\00 General/SIGN.jpg){ width=20% }
+
+Signature
+
+ 
+```{r}
+#install.packages("devtools")
+#library("devtools")
+#devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = library("wordcountaddin")
+wordcount <- wordcountaddin::word_count( )
+```
+
+
